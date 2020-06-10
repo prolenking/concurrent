@@ -11,7 +11,7 @@
 
 * 资料基础
 
-![avatar](MarkWord64.png)
+![avatar](image/MarkWord64.png)
 
 # 测试代码
 ```java
