@@ -39,7 +39,7 @@ public class LockTest {
         }
         printInfo("主线程解锁了a2", a2);
 
-        System.out.println("开始尝试并发情况下的锁");
+        System.out.println("捕捉偏向锁");
         System.out.println("new 一个 a3备用");
         A a3 = new A();
         synchronized (a3) {
@@ -47,7 +47,10 @@ public class LockTest {
             printInfo("上偏向锁的a3", a3);
             a3.a++;
         }
-        int threadNum = 2;
+
+        System.out.println("开始尝试并发情况下的锁");
+        A a4 = new A();
+        int threadNum = 4;
         CountDownLatch count = new CountDownLatch(threadNum);
         for (int i = 0; i < threadNum; i++) {
             int finalI = i;
@@ -58,13 +61,16 @@ public class LockTest {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        if (finalI < 1) {
+                        if (finalI != 0) {
                             try {
                                 System.out.println("thread_" + finalI + "睡了一会");
-                                Thread.sleep(200);
+                                Thread.sleep(200 * finalI);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
+                        }
+                        if (finalI == 1){
+                            printInfo("thread_"+finalI+"使用偏向锁锁了a4", a4);
                         }
                         synchronized (a2) {
                             System.out.println("thread_" + finalI + "给a2上了锁");
@@ -83,7 +89,7 @@ public class LockTest {
             e.printStackTrace();
         }
         CountDownLatch count1 = new CountDownLatch(threadNum);
-        for (int i = 2; i < threadNum + 2; i++) {
+        for (int i = threadNum; i < threadNum + threadNum; i++) {
             int finalI = i;
             new Thread(() -> {
                 try {
