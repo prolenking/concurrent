@@ -40,6 +40,13 @@ public class LockTest {
         printInfo("主线程解锁了a2", a2);
 
         System.out.println("开始尝试并发情况下的锁");
+        System.out.println("new 一个 a3备用");
+        A a3 = new A();
+        synchronized (a3) {
+            System.out.println("主线程给a3上了锁");
+            printInfo("上偏向锁的a3", a3);
+            a3.a++;
+        }
         int threadNum = 2;
         CountDownLatch count = new CountDownLatch(threadNum);
         for (int i = 0; i < threadNum; i++) {
