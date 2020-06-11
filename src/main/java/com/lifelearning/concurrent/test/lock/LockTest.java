@@ -69,8 +69,10 @@ public class LockTest {
                                 e.printStackTrace();
                             }
                         }
-                        if (finalI == 1){
-                            printInfo("thread_"+finalI+"使用偏向锁锁了a4", a4);
+                        if (finalI == 1) {
+                            synchronized (a4) {
+                                printInfo("thread_" + finalI + "使用偏向锁锁了a4", a4);
+                            }
                         }
                         synchronized (a2) {
                             System.out.println("thread_" + finalI + "给a2上了锁");
