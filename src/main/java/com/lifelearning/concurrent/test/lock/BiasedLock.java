@@ -32,6 +32,11 @@ public class BiasedLock {
             a3.a++;
         }
         printInfo("主线程解锁后的a3", a3);
+        // 争夺a3升级锁
+        scramble(a3);
+    }
+
+    private static void scramble(A a3) {
         System.out.println("new 一个线程B来争夺 a3");
         new Thread(() -> {
             synchronized (a3) {
