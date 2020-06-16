@@ -1,5 +1,6 @@
-package com.lifelearning.concurrent.test.lock;
+package com.lifelearning.concurrent.test.util;
 
+import com.lifelearning.concurrent.test.base.A;
 import org.openjdk.jol.info.ClassLayout;
 
 /**

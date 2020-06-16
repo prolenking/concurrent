@@ -110,7 +110,7 @@ public class LockTest {
 
 ```html
 刚启动new的实例
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)
       4     4        (object header)                           00 00 00 00 (00000000 00000000 00000000 00000000) (0)
@@ -120,7 +120,7 @@ Instance size: 16 bytes
 Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 
 等待之后JVM开的偏向锁
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           05 00 00 00 (00000101 00000000 00000000 00000000) (5)
       4     4        (object header)                           00 00 00 00 (00000000 00000000 00000000 00000000) (0)
@@ -141,7 +141,7 @@ hashCode:1100011101000010101101000
 这么看其实内存中的实例的字节排列都是反过来的（但是每一字节的二进制的顺序是正序的）—— 值不变，顺序反
 */
 
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           01 68 85 8e (00000001 01101000 10000101 10001110) (-1903859711)
       4     4        (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)
@@ -151,7 +151,7 @@ Instance size: 16 bytes
 Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 
 在主线程锁了一下a2
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           60 89 88 07 (01100000 10001001 10001000 00000111) (126388576)
       4     4        (object header)                           00 70 00 00 (00000000 01110000 00000000 00000000) (28672)
@@ -161,7 +161,7 @@ Instance size: 16 bytes
 Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 
 主线程解锁了a2
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           01 68 85 8e (00000001 01101000 10000101 10001110) (-1903859711)
       4     4        (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)
@@ -175,7 +175,7 @@ Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 thread_0睡了一会
 thread_1给a2上了锁
 上自旋锁的a2
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           f8 c8 a6 08 (11111000 11001000 10100110 00001000) (145148152)
       4     4        (object header)                           00 70 00 00 (00000000 01110000 00000000 00000000) (28672)
@@ -186,7 +186,7 @@ Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 
 thread_0给a2上了锁
 上自旋锁的a2
-com.lifelearning.concurrent.test.lock.A object internals:
+A object internals:
  OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
       0     4        (object header)                           f8 38 12 08 (11111000 00111000 00010010 00001000) (135411960)
       4     4        (object header)                           00 70 00 00 (00000000 01110000 00000000 00000000) (28672)

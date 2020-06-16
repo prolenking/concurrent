@@ -1,6 +1,8 @@
 package com.lifelearning.concurrent.test.lock;
 
-import static com.lifelearning.concurrent.test.lock.PrintUtil.printInfo;
+import com.lifelearning.concurrent.test.base.A;
+
+import static com.lifelearning.concurrent.test.util.PrintUtil.printInfo;
 
 /**
  * Create with IntelliJ IDEA

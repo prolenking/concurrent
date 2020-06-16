@@ -1,4 +1,4 @@
-package com.lifelearning.concurrent.test.lock;
+package com.lifelearning.concurrent.test.base;
 
 /**
  * Create with IntelliJ IDEA
@@ -9,6 +9,6 @@ package com.lifelearning.concurrent.test.lock;
  *
  * @author lizhi
  */
-class A {
-    int a;
+public class A {
+    public int a;
 }
