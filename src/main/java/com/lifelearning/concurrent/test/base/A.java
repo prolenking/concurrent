@@ -10,5 +10,6 @@ package com.lifelearning.concurrent.test.base;
  * @author lizhi
  */
 public class A {
-    public int a;
+    public int value;
+    public int version;
 }

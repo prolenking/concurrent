@@ -50,7 +50,7 @@ public class LockTest {
         synchronized (a3) {
             System.out.println("主线程给a3上了锁");
             PrintUtil.printInfo("上偏向锁的a3", a3);
-            a3.a++;
+            a3.value++;
         }
 
         System.out.println("开始尝试并发情况下的锁");
@@ -82,7 +82,7 @@ public class LockTest {
                         synchronized (a2) {
                             System.out.println("thread_" + finalI + "给a2上了锁");
                             PrintUtil.printInfo("上自旋锁的a2", a2);
-                            a2.a++;
+                            a2.value++;
                         }
                     }
             ).start();
@@ -107,7 +107,7 @@ public class LockTest {
                 synchronized (a2) {
                     System.out.println("thread_" + finalI + "给a2上了锁");
                     PrintUtil.printInfo("上重量级锁的a2", a2);
-                    a2.a++;
+                    a2.value++;
                 }
             }).start();
             count1.countDown();

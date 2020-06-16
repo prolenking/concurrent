@@ -31,7 +31,7 @@ public class BiasedLock {
         synchronized (a3) {
             System.out.println("主线程给a3上了锁");
             printInfo("上偏向锁的a3", a3);
-            a3.a++;
+            a3.value++;
         }
         printInfo("主线程解锁后的a3", a3);
         // 争夺a3升级锁
@@ -44,7 +44,7 @@ public class BiasedLock {
             synchronized (a3) {
                 System.out.println("线程B争夺a3");
                 printInfo("升级为自旋锁的a3", a3);
-                a3.a++;
+                a3.value++;
             }
             printInfo("线程B解锁了a3, a3回归无锁", a3);
         }).start();
