@@ -1,4 +1,4 @@
-package com.lifelearning.concurrent.test.util;
+package com.lifelearning.concurrent.test.lock.util;
 
 import java.util.concurrent.CountDownLatch;
 

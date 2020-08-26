@@ -3,7 +3,7 @@ package com.lifelearning.concurrent.test.lock;
 
 
 import com.lifelearning.concurrent.test.base.A;
-import com.lifelearning.concurrent.test.util.PrintUtil;
+import com.lifelearning.concurrent.test.lock.util.PrintUtil;
 
 import java.util.concurrent.CountDownLatch;
 

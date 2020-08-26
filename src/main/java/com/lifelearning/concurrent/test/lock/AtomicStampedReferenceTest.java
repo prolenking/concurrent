@@ -17,5 +17,7 @@ public class AtomicStampedReferenceTest {
     public static void main(String[] args) {
         A testa = new A();
         AtomicStampedReference<Integer> atomicAValue = new AtomicStampedReference<>(testa.value,testa.version);
+        atomicAValue.set(testa.value+1, testa.version+1);
+        System.out.println(atomicAValue.getReference() + " -- "+testa.version);
     }
 }

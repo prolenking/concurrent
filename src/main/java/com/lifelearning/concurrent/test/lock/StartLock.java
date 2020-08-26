@@ -2,7 +2,7 @@ package com.lifelearning.concurrent.test.lock;
 
 import com.lifelearning.concurrent.test.base.A;
 
-import static com.lifelearning.concurrent.test.util.PrintUtil.printInfo;
+import static com.lifelearning.concurrent.test.lock.util.PrintUtil.printInfo;
 
 /**
  * Create with IntelliJ IDEA
